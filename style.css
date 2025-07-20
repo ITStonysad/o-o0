@@ -1,0 +1,244 @@
+:root {
+  --color-fondo: rgba(0, 0, 0, 0.5);
+  --color-texto: white;
+  --color-borde: rgba(255, 255, 255, 0.5);
+  --radio-borde: 20px;
+  --fuente-principal: 'Ubuntu', sans-serif;
+}
+
+body {
+  background-image: url("./midias/fundo1.jpg");
+  background-repeat: no-repeat;
+  background-size: 110% 110%;
+  animation: none;
+  transition: all 0.3s ease;
+  background-color: #101010;
+  font-family: var(--fuente-principal);
+  padding: 25px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body::before {
+  content: "© TE AMO MUCHO";
+  color: white;
+  opacity: 0.3;
+  font-size: 2vw;
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 2;
+}
+
+#bodyblur {
+  display: block;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 1s ease;
+}
+
+#bodyblur img {
+  animation-name: fanim;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fanim {
+  0% { background-position: 0% 0%; }
+  25% { background-position: 100% 100%; }
+  50% { background-position: 0% 100%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes respiro {
+  0% { transform: scale(1.0); }
+  100% { transform: scale(0.8); }
+}
+
+.lovein {
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.lovein:hover {
+  transform: scale(1.3);
+}
+
+.lovein svg {
+  width: 80px;
+  height: 80px;
+  fill: #fefefe;
+}
+#Content {
+  margin: 15px;
+  margin-top: 45px;
+  padding: 20px;
+  border-radius: var(--radio-borde);
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  color: var(--color-texto);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#Content p {
+  font-size: 24px;
+  line-height: 1.8em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#pergeseran {
+  display: block;
+  margin-top: 40px;
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  padding: 15px 20px;
+  color: var(--color-texto);
+}
+
+#pergeseran p {
+  margin: 10px 0;
+  font-size: 18px;
+  line-height: 1.6em;
+  text-align: center;
+}
+
+button {
+  background-color: #ff0066;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+}
+
+button:hover {
+  background-color: #e6005c;
+}
+
+:root {
+  --color-fondo: rgba(255, 255, 255, 0.1);
+  --color-texto: #ffffff;
+  --color-borde: rgba(255, 255, 255, 0.3);
+  --color-acento: #ff80ab;
+  --radio-borde: 25px;
+  --fuente-principal: 'Dancing Script', cursive;
+}
+
+body {
+  background-color: #0d0d0d;
+  background-image: url("./midias/fundo1.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: var(--fuente-principal);
+  padding: 20px;
+  margin: 0;
+  user-select: none;
+  transition: background 1s ease;
+}
+
+body::before {
+  content: "© TE AMO MUCHO";
+  color: white;
+  opacity: 0.1;
+  font-size: 1.5vw;
+  position: fixed;
+  bottom: 15px;
+  left: 20px;
+  z-index: 5;
+}
+
+#bodyblur {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: -1;
+}
+
+#bodyblur img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.1;
+}
+
+#Content {
+  margin: 40px auto;
+  max-width: 700px;
+  padding: 30px;
+  border-radius: var(--radio-borde);
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  color: var(--color-texto);
+  box-shadow: 0 0 20px rgba(255, 128, 171, 0.2);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#Content p {
+  font-size: 26px;
+  text-align: center;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+
+#pergeseran {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: var(--radio-borde);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-texto);
+  text-align: center;
+  border: 1px solid var(--color-borde);
+}
+
+#pergeseran p {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+button {
+  background-color: var(--color-acento);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 128, 171, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff6699;
+  transform: scale(1.05);
+}
+
+.lovein {
+  font-size: 60px;
+  text-align: center;
+  animation: pulse 1.8s infinite ease-in-out;
+  color: var(--color-acento);
+  margin-top: 40px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}

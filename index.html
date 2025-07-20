@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta - Parte 1</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #Content {
+      font-size: 1.5em;
+      color: white;
+      text-align: center;
+      margin-top: 20vh;
+      padding: 0 30px;
+      transition: opacity 1s ease;
+    }
+
+    #pregunta {
+    margin-top: 40px;
+    display: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+    .boton {
+      background-color: #ff6699;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #ff3366;
+    }
+  </style>
+</head>
+<body>
+  <div id="bodyblur">
+    <img src="midias/fundo1.jpg" alt="Fondo romántico" style="width: 100vw; height: 100vh; object-fit: cover;">
+  </div>
+
+  <div id="Content">Cargando...</div>
+
+  <div id="pregunta" style="display: none;">
+    <p>¿Quieres seguir con las siguientes cartas? 💌</p>
+    <button class="boton" id="siBtn">Sí</button>
+    <button class="boton" id="noBtn">No</button>
+  </div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const audio = new Audio('./midias/musica1.mp3');
+      audio.volume = 0.5;
+      audio.play().catch(() => {
+        console.log("Autoplay bloqueado.");
+      });
+
+      const frases = [
+        "Hola, mi vida ❤️",
+        "Quiero que sepas algo muy especial...",
+        "Cada palabra que estás a punto de leer, viene directamente desde mi corazón 💌",
+        "Eres lo más hermoso que me ha pasado.",
+        "Y quiero estar contigo siempre."
+      ];
+
+      const content = document.getElementById("Content");
+      const pregunta = document.getElementById("pregunta");
+      const siBtn = document.getElementById("siBtn");
+      const noBtn = document.getElementById("noBtn");
+
+      let i = 0;
+
+      function mostrarFrase() {
+        if (i < frases.length) {
+          content.innerHTML = `<p>${frases[i]}</p>`;
+          i++;
+          setTimeout(mostrarFrase, 4000);
+        } else {
+          // Mostrar pregunta después de las frases
+          setTimeout(() => {
+            content.innerHTML = "";
+            pregunta.style.display = "flex";
+          }, 4000);
+        }
+      }
+
+      siBtn.addEventListener("click", () => {
+     pregunta.style.display = "none";
+     window.location.href = "index2.html";
+     });
+
+
+
+      noBtn.addEventListener("click", () => {
+    pregunta.style.display = "none";
+    content.innerHTML = `<p>No lo siento amor... no se puede decir que no 😉</p>`;
+    setTimeout(() => {
+    window.location.href = "index2.html";
+    }, 4000);
+    });
+
+
+      content.style.opacity = "1";
+      mostrarFrase();
+    });
+  </script>
+</body>
+</html>
+
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const audio = new Audio('./midias/musica3.mp3');
+    audio.volume = 0.5;
+    audio.play();
+
+    const frases = [
+      "Esta es la última parte... 🥺",
+      "Pero mi amor por ti no termina aquí.",
+      "Gracias por tomarte el tiempo de leer cada palabra.",
+      "Gracias por existir.",
+      "Te amo con todo lo que soy ❤️",
+      "Siempre tuyo"
+    ];
+
+    const content = document.getElementById("Content");
+    content.style.opacity = "1";
+    content.style.transition = "opacity 1s ease";
+
+    let i = 0;
+    function mostrarFrase() {
+      if (i < frases.length) {
+        content.innerHTML = `<p>${frases[i]}</p>`;
+        i++;
+        setTimeout(mostrarFrase, 4000); // cada frase cada 4 segundos
+      } else {
+        // No redirige, termina
+      }
+    }
+
+    mostrarFrase();
+  });
+</script>
+

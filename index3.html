@@ -1,0 +1,67 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="google" content="notranslate">
+  <meta content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5" name="viewport" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <link rel="icon" href="./midias/envelope.png">
+  <title>MI AMOR ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="bodyblur">
+    <img src="./midias/fundo1.jpg" />
+  </div>
+
+  <div id="Content">
+    <p id="textContent">Desde que llegaste, mi vida cambió por completo ❤️</p>
+    <p id="textContent">Tú me haces feliz cada día.</p>
+    <p id="textContent">Eres lo mejor que me ha pasado.✨</p>
+    <p id="textContent">No hay palabras suficientes para expresar lo que siento por ti.</p>
+    <p id="textContent">Solo quiero estar contigo por siempre ❤️</p>
+    <p id="textContent">Gracias por existir.</p>
+  </div>
+
+  <div class="lovein">❤️</div>
+
+  <script>
+    const swals = Swal.mixin({
+      allowOutsideClick: false,
+      cancelButtonColor: '#FF0040',
+    });
+
+    async function terceraParte() {
+      const audio = new Audio('midias/Corazon.mp3');
+      audio.play();
+
+      await swals.fire("¡Hola de nuevo! ❤️");
+      await swals.fire("Esta es la última parte 🥺", "Pero mi amor por ti no tiene final...");
+
+      document.getElementById("Content").style.opacity = "1";
+    }
+
+    setTimeout(terceraParte, 1000);
+  </script>
+</body>
+</html>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const audio = new Audio('./midias/musica3.mp3');
+    audio.volume = 0.5;
+    audio.play();
+
+    const content = document.getElementById("Content");
+    content.style.opacity = "1";
+    content.style.transition = "opacity 1s ease, transform 1s ease";
+    content.style.transform = "scale(1.02)";
+    setTimeout(() => {
+      content.style.transform = "scale(1)";
+    }, 1000);
+  });
+</script>

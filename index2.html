@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta - Parte 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="bodyblur">
+    <img src="midias/fundo1.jpg" alt="Fondo romántico">
+  </div>
+
+  <div id="Content"></div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const audio = new Audio('./midias/musica2.mp3');
+      audio.volume = 0.5;
+      audio.play();
+
+      const frases = [
+        "Hola otra vez, mi amor ❤️",
+        "¿Sabías que cada vez que pienso en ti, sonrío?",
+        "No hay día que no agradezca por tenerte en mi vida.",
+        "Esta segunda parte es solo para recordarte...",
+        "Que te amo con cada parte de mí 💖"
+      ];
+
+      const content = document.getElementById("Content");
+      content.style.opacity = "1";
+      content.style.transition = "opacity 1s ease";
+
+      let i = 0;
+      function mostrarFrase() {
+        if (i < frases.length) {
+          content.innerHTML = `<p>${frases[i]}</p>`;
+          i++;
+          setTimeout(mostrarFrase, 4000);
+        } else {
+          setTimeout(() => {
+            window.location.href = "index3.html";
+          }, 4000);
+        }
+      }
+
+      mostrarFrase();
+    });
+  </script>
+</body>
+</html>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const audio = new Audio('./midias/musica2.mp3');
+    audio.volume = 0.5;
+    audio.play();
+
+    const content = document.getElementById("Content");
+    content.style.opacity = "1";
+    content.style.transition = "opacity 1s ease, transform 1s ease";
+    content.style.transform = "scale(1.02)";
+    setTimeout(() => {
+      content.style.transform = "scale(1)";
+    }, 1000);
+
+    // Redirigir después de 10 segundos
+    setTimeout(() => {
+      window.location.href = "index3.html";
+    }, 10000);
+  });
+</script>

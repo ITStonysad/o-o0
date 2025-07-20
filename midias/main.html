@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta completa</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #cartaFrame {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Música que se mantiene -->
+  <audio id="musica" src="midias/Corazon.mp3" autoplay loop></audio>
+
+  <!-- Contenedor para las cartas -->
+  <iframe id="cartaFrame" src="index.html"></iframe>
+
+  <script>
+    const cartaFrame = document.getElementById("cartaFrame");
+
+    // Comunicación con las cartas para avanzar
+    window.addEventListener("message", (event) => {
+      if (event.data === "pasar-a-index2") {
+        cartaFrame.src = "index2.html";
+      } else if (event.data === "pasar-a-index3") {
+        cartaFrame.src = "index3.html";
+      }
+    });
+  </script>
+</body>
+</html>
